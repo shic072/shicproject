@@ -1,0 +1,86 @@
+/*<style>*/
+
+		@font-face {
+		  font-family: 'iconfont';
+		  src: url('iconfont.eot');
+		  src: url('iconfont.eot?#iefix') format('embedded-opentype'),
+		      url('iconfont.woff2') format('woff2'),
+		      url('iconfont.woff') format('woff'),
+		      url('iconfont.ttf') format('truetype'),
+		      url('iconfont.svg#iconfont') format('svg');
+		}
+		.iconfont {
+			  font-family: "iconfont" !important;
+			  font-size: 30px;
+			  font-style: normal;
+			  color: #fff;
+			  text-align: center;
+			  -webkit-font-smoothing: antialiased;
+			  -moz-osx-font-smoothing: grayscale;
+		}
+		*{
+			padding: 0;
+			margin:0;
+			list-style: none;
+		}
+		.swiperBox{
+			width: 1200px;
+			margin:0 auto;
+			height: 570px;
+			margin-top: 20px;
+			position: relative;
+		}
+		.swiperimg{
+			display: flex;
+			overflow: hidden;
+			width: 1200px;
+			height: 534px;
+		}
+		.swiperimg>img{
+			display: none;
+			width: 100%;
+		}
+		.swiperimg>img.show{
+			display: block;
+			width: 100%;
+		}
+
+		.toget{
+			height: 100px;
+			width: 46px;
+			background: rgba(0,0,0,0.3);
+			position: absolute;
+			top: 40%;
+			line-height: 100px;
+			cursor:pointer;
+		}
+		.left{
+			left: 0;
+		}
+		.right{
+			right:0;
+		}
+		.swiperBox ul{
+			width: 1200px;
+			height: 16px;
+			margin-top: 20px;
+			display: flex;
+			justify-content: center;
+			align-items:center;
+		}
+		.swiperBox ul>li{
+			height: 8px;
+			width: 8px;
+			margin-left: 8px;
+			border-radius:50%;
+			background: #DADADA;
+			float:left;
+			/*transition: all 0.3s;*/
+			cursor:pointer;
+		}
+		.swiperBox ul>li.curr{
+			width: 14px;
+			background: #ff7900;
+			border-radius:4px;
+		}
+/*	</style>*/

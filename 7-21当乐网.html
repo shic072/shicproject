@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="轮播.css">
+	<link rel="stylesheet" type="text/css" href="content.css">
+	<link rel="stylesheet" type="text/css" href="column-rec.css">
+	<style>
+		*{
+			padding: 0;
+			margin:0;
+			list-style: none;
+			text-decoration: none;
+			box-sizing: border-box;
+		}
+		.header{
+			width: 100%;
+			height: 80px;
+			background:#fff;
+			box-shadow:0 5px 24px -16px #000;
+			
+		}
+		.header_box{
+			width: 1200px;
+			height: 100%;
+			margin:0 auto;
+			display: flex;
+			align-items:center;
+		}
+		.header_box>.logo{
+			display: inline-block;
+			width: 86px;
+			height:37px ;
+			background: url(images/logo.png);
+		}
+		.header_box>.app{
+			display:inline-block;
+			width: 64px;
+			height: 17px;
+			background: url(images/app.png);
+			margin-left:16px;
+		}
+		.header_box>ul{
+			margin-left:34px;
+		}
+		.header_box>ul li{
+			width: 80px;
+			height: 80px;
+			line-height: 80px;
+			text-align: center;
+			font-size: 18px;
+			color: #282828;
+			box-sizing: border-box;
+			cursor: pointer;
+		}
+		.header_box>ul li:hover{
+			color: #ff7900;
+			border-bottom:5px solid #ff7900 ;
+		}
+		.header_form{
+			width: 432px;
+			height: 40px;
+			margin-left:34px;
+			background: #f5f5f5;
+			border-radius: 20px;
+		}
+		.header_form>a{
+			display: block;
+			height: 40px;
+			width: 86px;
+			padding-left: 24px;
+			line-height: 40px;
+			color: #282828;
+			display: flex;
+			align-items: center;
+			position: relative;
+		}
+		.header_form>a:after{
+			content: '';
+			border-right: 1px solid #ddd;
+			height: 20px;
+			position: absolute;
+			right: 0;
+			top: 10px;
+		}
+		.header_form a i{
+			display: inline-block;
+			width: 16px;
+			height: 8px;
+			margin-left: 5px;
+			background: url(images/down.png) no-repeat center;
+		}
+		.fl{
+			float: left;
+		}
+		.fr{
+			float: right;
+		}
+		input{
+			border:0;
+			outline: none;
+		}
+		.header_box input[type=text]{
+			width: 256px;
+			height: 40px;
+			line-height: 40px;
+			background: transparent;
+			color: #999;
+			padding:0 16px;
+			font-size: 14px;
+		}
+		.header_box input[type=submit]{
+			width: 90px;
+			height: 40px;
+			background: #ff7900;
+			color: #fff;
+			border-top-right-radius: 20px;
+			border-bottom-right-radius: 20px;
+			font-size: 14px;
+			cursor:pointer;
+		}
+		.header_box .user_box{
+			margin-left:13px;
+			display: flex;
+			align-items: center;
+		}
+		.header_box .user_box .no-login{
+			display: block;
+			width: 44px;
+			height: 44px;
+			background: url(https://raw.d.cn/wwwdcn/190701/img/base/default-user-photo.png?__inline.png);
+		}
+		.header_box .user_box div{
+			margin-left: 10px;
+			color:#999;
+			font-size: 16px;
+		}
+		.header_box .user_box div>a{
+			color: #999;
+			font-size: 16px;
+			margin:0 5px;
+		}
+	</style>
+</head>
+<body>
+	<div class="header">
+		<div class="header_box">
+			<a href="#" class="logo"></a>
+			<a href="#" class="app"></a>
+			<ul>
+				<li class="fl">游戏</li>
+				<li class="fl">原创</li>
+				<li class="fl">视频</li>
+				<li class="fl">礼包</li>
+			</ul>
+			<form action="" class="header_form">
+				<a href="#" class="fl">
+					<span>安卓</span>
+					<i></i>
+				</a>
+				<input type="text" placeholder="完美世界" class="fl">
+				<input type="submit" value="搜索" class="fl">
+			</form>
+			<div class="user_box">
+				<a href="" class="no-login fl"></a>
+				<div class="fl">
+					<a href="#">登录</a>
+					<span>|</span>
+					<a href="#">注册</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="content">
+		<div class="swiperBox">
+			<div class="swiperimg">
+				<img src="https://img-android.d.cn/new/smtpfbackend/new/new_banner/201907/1563595438054HunS.jpg" alt="" class="show">
+				<img src="https://img-android.d.cn/new/smtpfbackend/new/new_banner/201907/1563767439013wSwR.jpg" alt="">
+				<img src="https://img-android.d.cn/new/smtpfbackend/new/new_banner/201907/1563501992323ve2x.jpg" alt="">
+				<img src="https://img-android.d.cn/new/smtpfbackend/new/new_banner/201907/1563504585210EgRW.jpg" alt="">
+				<img src="https://img-android.d.cn/new/smtpfbackend/new/new_banner/201907/1563416794549Hn3o.jpg" alt="">
+				<img src="https://img-android.d.cn/new/smtpfbackend/new/new_banner/201907/1563189104981n2Wj.jpg" alt="">
+			</div>
+			<div class="left toget iconfont">&#xe6a2;</div>
+			<div class="right toget iconfont">&#xe6a3;</div>
+			<ul>
+				<li class="curr" data-index="0"></li>
+				<li data-index="1"></li>
+				<li data-index="2"></li>
+				<li data-index="3"></li>
+				<li data-index="4"></li>
+				<li data-index="5"></li>
+			</ul>
+		</div>
+		<div class="today-recommend">
+			<h2 class="title-box">今日推荐
+				<a href="#" class="fr">
+					<i></i>换一换
+				</a>
+			</h2>
+			<div class="rec-content">
+				<ul>
+					<li class="todayCurr fl">
+						<a href="#">
+							<img src="https://img.d.cn/netgame/hdlogo/9234_1553065850687_MPsl8pul.png" alt="">
+							<span>龙族幻想</span>
+							<div class="hover-text">
+								<h4>龙族幻想</h4>
+								<span>全新次世代RPG大作</span>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="https://img.d.cn/netgame/hdlogo/9234_1553065850687_MPsl8pul.png" alt="">
+							<span>龙族幻想</span>
+							<div class="hover-text">
+								<h4>龙族幻想</h4>
+								<span>全新次世代RPG大作</span>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="https://img.d.cn/netgame/hdlogo/9234_1553065850687_MPsl8pul.png" alt="">
+							<span>龙族幻想</span>
+							<div class="hover-text">
+								<h4>龙族幻想</h4>
+								<span>全新次世代RPG大作</span>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="https://img.d.cn/netgame/hdlogo/9234_1553065850687_MPsl8pul.png" alt="">
+							<span>龙族幻想</span>
+							<div class="hover-text">
+								<h4>龙族幻想</h4>
+								<span>全新次世代RPG大作</span>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="https://img.d.cn/netgame/hdlogo/9234_1553065850687_MPsl8pul.png" alt="">
+							<span>龙族幻想</span>
+							<div class="hover-text">
+								<h4>龙族幻想</h4>
+								<span>全新次世代RPG大作</span>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="https://img.d.cn/netgame/hdlogo/9234_1553065850687_MPsl8pul.png" alt="">
+							<span>龙族幻想</span>
+							<div class="hover-text">
+								<h4>龙族幻想</h4>
+								<span>全新次世代RPG大作</span>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="https://img.d.cn/netgame/hdlogo/9234_1553065850687_MPsl8pul.png" alt="">
+							<span>龙族幻想</span>
+							<div class="hover-text">
+								<h4>龙族幻想</h4>
+								<span>全新次世代RPG大作</span>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="https://img.d.cn/netgame/hdlogo/9234_1553065850687_MPsl8pul.png" alt="">
+							<span>龙族幻想</span>
+							<div class="hover-text">
+								<h4>龙族幻想</h4>
+								<span>全新次世代RPG大作</span>
+							</div>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="video-games">
+			<div class="video-info fl">
+				<h2 class="title-box">精彩视频
+					<a href="#" class="fr">
+						<i class="more"></i>更多
+					</a>
+				</h2>
+				<ul class="video-list">
+					<li class="fl">
+						<a href="#">
+							<div class="img"><img src="https://img-android.d.cn/new/smtpfbackend/new/module/201907/1563768180981R70J.jpeg" alt=""></div>
+							<p class="desc">《刺客信条:本色 》展开充满神秘色彩的刺客世界试玩视频</p>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<div class="img"><img src="https://img-android.d.cn/new/smtpfbackend/new/module/201907/1563768180981R70J.jpeg" alt=""></div>
+							<p class="desc">《刺客信条:本色 》展开充满神秘色彩的刺客世界试玩视频</p>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<div class="img"><img src="https://img-android.d.cn/new/smtpfbackend/new/module/201907/1563768180981R70J.jpeg" alt=""></div>
+							<p class="desc">《刺客信条:本色 》展开充满神秘色彩的刺客世界试玩视频</p>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<div class="img"><img src="https://img-android.d.cn/new/smtpfbackend/new/module/201907/1563768180981R70J.jpeg" alt=""></div>
+							<p class="desc">《刺客信条:本色 》展开充满神秘色彩的刺客世界试玩视频</p>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<div class="img"><img src="https://img-android.d.cn/new/smtpfbackend/new/module/201907/1563768180981R70J.jpeg" alt=""></div>
+							<p class="desc">《刺客信条:本色 》展开充满神秘色彩的刺客世界试玩视频</p>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<div class="img"><img src="https://img-android.d.cn/new/smtpfbackend/new/module/201907/1563768180981R70J.jpeg" alt=""></div>
+							<p class="desc">《刺客信条:本色 》展开充满神秘色彩的刺客世界试玩视频</p>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="game-info fl">
+				<h2 class="title-box">新游预告</h2>
+				<div class="game-list">
+					<ul class="game-list-show">
+						<li>
+							<a href="#">
+								<img src="https://img.d.cn/netgame/hdlogo/9039_1531979015607_ZIIV9Lif.png" alt="">
+								<div>
+									<h4>新笑傲江湖</h4>
+									<p>完美世界国韵匠心之作</p>
+									<p> 
+										<img src="images/time.png" alt="">
+										敬请期待
+									</p>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="https://img.d.cn/netgame/hdlogo/9039_1531979015607_ZIIV9Lif.png" alt="">
+								<div>
+									<h4>新笑傲江湖</h4>
+									<p>完美世界国韵匠心之作</p>
+									<p> 
+										<img src="images/time.png" alt="">
+										敬请期待
+									</p>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="https://img.d.cn/netgame/hdlogo/9039_1531979015607_ZIIV9Lif.png" alt="">
+								<div>
+									<h4>新笑傲江湖</h4>
+									<p>完美世界国韵匠心之作</p>
+									<p> 
+										<img src="images/time.png" alt="">
+										敬请期待
+									</p>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="https://img.d.cn/netgame/hdlogo/9039_1531979015607_ZIIV9Lif.png" alt="">
+								<div>
+									<h4>新笑傲江湖</h4>
+									<p>完美世界国韵匠心之作</p>
+									<p> 
+										<img src="images/time.png" alt="">
+										敬请期待
+									</p>
+								</div>
+							</a>
+						</li>
+					</ul>
+					<ul >
+						<li>
+							<a href="#">
+								<img src="https://img.d.cn/netgame/hdlogo/8791_1543287955791_uTgx4YKu.png" alt="">
+								<div>
+									<h4>猎手之王</h4>
+									<p>2.5D冷兵器生存竞技手游</p>
+									<p> 
+										<img src="images/time.png" alt="">
+										敬请期待
+									</p>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="https://img.d.cn/netgame/hdlogo/9445_1541560068891_Y0ao4UuW.png" alt="">
+								<div>
+									<h4>神谕文明</h4>
+									<p>跨文明策略大作</p>
+									<p> 
+										<img src="images/time.png" alt="">
+										敬请期待
+									</p>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="https://img.d.cn/netgame/hdlogo/9366_1552299301484_dWV9dck2.png" alt="">
+								<div>
+									<h4>鬼泣-巅峰之战</h4>
+									<p>鬼泣官方制作团队指导监修</p>
+									<p> 
+										<img src="images/time.png" alt="">
+										敬请期待
+									</p>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="https://img.d.cn/netgame/hdlogo/9039_1531979015607_ZIIV9Lif.png" alt="">
+								<div>
+									<h4>新笑傲江湖</h4>
+									<p>完美世界国韵匠心之作</p>
+									<p> 
+										<img src="images/time.png" alt="">
+										敬请期待
+									</p>
+								</div>
+							</a>
+						</li>
+					</ul>
+					<div class="game-btn">
+						<span class="game-iconfont fs14 game-left">&#xe6a2;</span>
+						<span class="game-iconfont game-right">&#xe6a3;</span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="hot-games">
+			<h2 class="title-box">精选合辑
+				<a href="#" class="fr">
+					<i></i>换一换
+				</a>
+			</h2>
+			<ul>
+				<li class="fl">
+					<div class="liBox">
+						<img src="https://img-android.d.cn/new/smtpfbackend/new/module/201907/1563846412189OZWU.jpg" alt="">
+						<h6>热门新游</h6>
+						<div class="liBox-lis">
+							<div class="liBox_lis_box">
+								<ul>
+									<li class="fl">
+										<img src="https://img.d.cn/netgame/hdlogo/9986_1562725366801_vtQUdeez.png" alt="">
+										<p>权力的游戏</p>
+									</li>
+									<li class="fl">
+										<img src="https://uus-img9-android.d.cn/content_pic/201907/behpic/icon/472/1-85472/icon-1561948659534.png" alt="">
+										<p>权力的游戏</p>
+									</li>
+									<li class="fl">
+										<img src="https://uus-img5-android.d.cn/content_pic/201907/behpic/icon/171/1-85171/icon-1563348945819.png" alt="">
+										<p>权力的游戏</p>
+									</li>
+									<li class="fl">
+										<img src="https://img.d.cn/netgame/hdlogo/8160_1557380947946_R22tt8q4.jpg" alt="">
+										<p>权力的游戏</p>
+									</li>
+									<li class="fl">
+										<img src="https://uus-img3-android.d.cn/content_pic/201907/behpic/icon/592/1-85592/icon-1563443302562.png" alt="">
+										<p>权力的游戏</p>
+									</li>
+									<li class="fl">
+										<img src="https://uus-img9-android.d.cn/content_pic/201903/behpic/icon/878/1-84878/icon-1553656359975.png" alt="">
+										<p>权力的游戏</p>
+									</li>
+									<li class="fl">
+										<img src="https://uus-img2-android.d.cn/content_pic/201906/behpic/icon/411/1-85411/icon-1561082667345.png" alt="">
+										<p>权力的游戏</p>
+									</li>
+								</ul>
+							</div>
+							<span class="iconfont liBox-lis_left">&#xe6a2;</span>
+							<span class="iconfont liBox-lis_right">&#xe6a3;</span>
+						</div>
+						
+					</div>
+				</li>
+				<li class="fl">
+					<div class="liBox">
+						<img src="https://img-android.d.cn/new/smtpfbackend/new/module/201907/1563844991591LZEA.jpg" alt="">
+						<h6>文字之美</h6>
+						<div class="liBox-lis">
+							<ul>
+								<li class="fl">
+									<img src="https://img.d.cn/netgame/hdlogo/9986_1562725366801_vtQUdeez.png" alt="">
+									<p>权力的游戏</p>
+								</li>
+								<li class="fl">
+									<img src="https://img.d.cn/netgame/hdlogo/9986_1562725366801_vtQUdeez.png" alt="">
+									<p>权力的游戏</p>
+								</li>
+								<li class="fl">
+									<img src="https://img.d.cn/netgame/hdlogo/9986_1562725366801_vtQUdeez.png" alt="">
+									<p>权力的游戏</p>
+								</li>
+								<li class="fl">
+									<img src="https://img.d.cn/netgame/hdlogo/9986_1562725366801_vtQUdeez.png" alt="">
+									<p>权力的游戏</p>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</li>
+				<li class="fl">
+					<div class="liBox">
+						<img src="https://img-android.d.cn/new/smtpfbackend/new/module/201907/1563950245904OHok.jpg" alt="">
+						<h6>特别更新活动</h6>
+						<div class="liBox-lis">
+							<ul>
+								<li class="fl">
+									<img src="https://img.d.cn/netgame/hdlogo/9986_1562725366801_vtQUdeez.png" alt="">
+									<p>权力的游戏</p>
+								</li>
+								<li class="fl">
+									<img src="https://img.d.cn/netgame/hdlogo/9986_1562725366801_vtQUdeez.png" alt="">
+									<p>权力的游戏</p>
+								</li>
+								<li class="fl">
+									<img src="https://img.d.cn/netgame/hdlogo/9986_1562725366801_vtQUdeez.png" alt="">
+									<p>权力的游戏</p>
+								</li>
+								<li class="fl">
+									<img src="https://img.d.cn/netgame/hdlogo/9986_1562725366801_vtQUdeez.png" alt="">
+									<p>权力的游戏</p>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="column-rec">
+			<div class="box">
+				<div class="img_box">
+					<a href="#" class='show'><img src="https://img.d.cn/be/image/1907/tn44wjxmlrq24.jpg" alt="" ></a>
+					<a href="#"><img src="https://img.d.cn/be/image/1907/444wjy6yfhmr.png" alt="" ></a>
+					<a href="#"><img src="images/1.jpg" alt="" ></a>
+				</div>
+				<div class="btn_box">
+					<a href="#" class="curr" data-index="0">大学男生已经不愿意主动追女生了，这事儿有解？</a>
+					<a href="#" data-index="1">Cryptovoxels | 致我们的平行宇宙</a>
+					<a href="#" data-index="2">ChinaJoy高通骁龙主题馆开启今夏移动游戏盛宴！</a>
+				</div>
+			</div>
+		</div>
+		<a href="#" class="line-img">
+			<img src="https://img.d.cn/be/image/1906/8g44kjwikualo.jpg" alt="">
+		</a>
+	</div>
+	<div class="footer"></div>
+</body>
+	<script src="http://libs.baidu.com/jquery/2.1.1/jquery.min.js"></script>
+	<script src="轮播.js"></script>
+	<script src="content.js"></script>
+	<script src="column-rec.js"></script>
+</html>
